@@ -1,0 +1,50 @@
+body {
+    font-family: Courier;
+}
+
+#welcome {
+    padding-top: 35vh;
+    /* background-color: blue; */
+}
+
+#content {
+    padding-top: 10vh;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    width:100%;
+}
+
+h1 {
+    display: inline-block;
+}
+
+.fade-in {
+    display:none;
+}
+
+.btns:hover {
+    font-weight: bold;
+}
+
+#name-btn {
+    cursor: pointer;
+}
+
+#welcome-title-cursor {
+    animation: blink-animation 1s steps(2, start) infinite;
+    -webkit-animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blinker {
+    to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

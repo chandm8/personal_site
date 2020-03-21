@@ -1,0 +1,21 @@
+{% extends "mysite/header.html" %}
+
+{% block content %}
+<div id="content">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <h2><b>Music</b></h2>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            {% for post in object_list %}
+            <h5>
+                <a href="/words/{{post.id}}">{{post.title}}</a>
+            </h5>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

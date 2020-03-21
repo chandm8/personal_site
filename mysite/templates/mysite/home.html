@@ -1,0 +1,34 @@
+{% extends "mysite/header.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-11" id="name"> <!-- use auto to find natural width? -->
+        <h4 onclick="darkTheme()" class="fade-in" id="name-btn">chandler manns</h4>
+    </div>
+	<div class="col-sm-1"> <!-- use auto to find natural width? -->
+        <h4 id="name-blank-btn">‌&nbsp</h4>
+    </div>
+</div>
+<div class="row" id="welcome">
+    <div class="container text-center" id="title-container">
+        <h1 id="blank">‌‌&nbsp</h1><h1 id="welcome-title"></h1><h1 id="welcome-title-cursor">|</h1>
+    </div>
+</div>
+
+<div class="row justify-content-md-center" id="select-row">
+    <div class="col-md-auto">
+        <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="food-btn">food</h3>
+    </div>
+    <div class="col-md-auto">
+        <a href="/music/"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="music-btn">music</h3></a>
+    </div>
+    <div class="col-md-auto">
+        <a href="/words/"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="words-btn">words</h3></a>
+    </div>
+    <div class="col-md-auto">
+        <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="business-btn">business</h3>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

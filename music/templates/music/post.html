@@ -1,0 +1,28 @@
+{% extends "mysite/header.html" %}
+
+{% block content %}
+<div class="row">
+    <h4 onclick="darkTheme()" id="name-btn">chandler manns</h4>
+</div>
+
+<div id="content">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <h2><b>{{album.title}}</b></h2>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <h4>{{album.artist}}</h4>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <p>{{album.body|safe|linebreaks}}</p>
+        </div>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'js/post.js' %}"></script>
+{% endblock %}
