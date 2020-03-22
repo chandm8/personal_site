@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 class Album(models.Model):
     title = models.CharField(max_length=150)

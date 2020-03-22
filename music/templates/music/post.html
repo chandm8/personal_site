@@ -21,6 +21,15 @@
             <p>{{album.body|safe|linebreaks}}</p>
         </div>
     </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            {% for song in album.trackList %}
+            <h5>
+                <p>{{song}}</p>
+            </h5>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% load static %}

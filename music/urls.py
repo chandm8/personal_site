@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path, include, re_path
 from django.views.generic import ListView, DetailView
-from blog.models import Post
+from music.models import Album
 
 
 urlpatterns = [
