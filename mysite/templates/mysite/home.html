@@ -1,6 +1,6 @@
 {% extends "mysite/header.html" %}
 {% block content %}
-<div class="row">
+<div class="row" style="margin-top: 10px;margin-left: 10px;">
     <div class="col-sm-11" id="name"> <!-- use auto to find natural width? -->
         <h4 onclick="darkTheme()" class="fade-in" id="name-btn">chandler manns</h4>
     </div>
@@ -19,10 +19,10 @@
         <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="food-btn">food</h3>
     </div>
     <div class="col-md-auto">
-        <a href="/music/"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="music-btn">music</h3></a>
+        <a href="/music/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="music-btn">music</h3></a>
     </div>
     <div class="col-md-auto">
-        <a href="/words/"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="words-btn">words</h3></a>
+        <a href="/words/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="words-btn">words</h3></a>
     </div>
     <div class="col-md-auto">
         <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="business-btn">business</h3>

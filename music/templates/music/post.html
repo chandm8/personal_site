@@ -1,33 +1,34 @@
 {% extends "mysite/header.html" %}
 
 {% block content %}
-<div class="row">
+<div class="row" style="margin-top: 10px;margin-left: 10px;">
     <h4 onclick="darkTheme()" id="name-btn">chandler manns</h4>
 </div>
-
 <div id="content">
     <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-            <h2><b>{{album.title}}</b></h2>
-        </div>
-    </div>
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-            <h4>{{album.artist}}</h4>
-        </div>
-    </div>
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-            <p>{{album.body|safe|linebreaks}}</p>
-        </div>
-    </div>
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-            {% for song in album.trackList %}
-            <h5>
-                <p>{{song}}</p>
-            </h5>
-            {% endfor %}
+        <div class="col col-sm-8">
+            <div class="row">
+                <div class="col col-sm-8" style="padding-bottom: 40px;">
+                    <h2 style="text-align: center;"><b>{{album.title}}</b></h2>
+                    <h4 style="text-align: center;"><i>{{album.artist}}</i></h4>
+                    <p>{{album.body|safe|linebreaks}}</p>
+                    <p><b>Notable tracks:</b></p>
+                        {% for song in album.favTracks %}
+                        <span>{{song}}{% if forloop.last == False %},{% endif %}</span>
+                        {% endfor %}
+                </div>
+                <div class="col col-sm-4" style="padding-bottom: 40px;">
+                    <div>
+                        <img class="album-art" src="{{album.coverArt}}">
+                        <h3 style="text-align: center;padding-top: 20px;"><b>Tracklist</b></h3>
+                        <ol>
+                            {% for song in album.trackList %}
+                            <li>{{song}}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,10 +1,15 @@
 {% extends "mysite/header.html" %}
 
 {% block content %}
+<div class="row" style="margin-top: 10px;margin-left: 10px;">
+    <div class="col-sm-11" id="name">
+        <h4 onclick="darkTheme()" id="name-btn">chandler manns</h4>
+    </div>
+</div>
 <div id="content">
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
-            <h2><b>Music</b></h2>
+            <h2><b>music</b></h2>
         </div>
     </div>
     <div class="row justify-content-md-center">
@@ -14,13 +19,14 @@
             {% ifequal forloop.counter0|modulo:3 0 %}
             <div class="row">
             {% endifequal %}
-                <div class="col col-lg-2">
-                    <div class="album_elem">
-                        <img src="{{post.coverArt}}">
-                        <h5>
-                            <a href="/music/{{post.id}}">{{post.title}}</a>
-                        </h5>
-                    </div>
+                <div class="col col-lg-4">
+                    <a href="/music/{{post.id}}" class="anchor">
+                        <div class="link-text album_elem">
+                            <img class="album-art" src="{{post.coverArt}}">
+                            <h4 class="link-text album-title"><b>{{post.title}}</b></h4>
+                            <h5 class="link-text album-artist">{{post.artist}}</h5>
+                        </div>
+                    </a>
                 </div>
             {% if forloop.last or forloop.counter0|modulo:3 == 2 %}
             </div>
