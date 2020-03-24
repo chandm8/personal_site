@@ -7,8 +7,8 @@ class Album(models.Model):
     genre = models.CharField(max_length=150)
     coverArt = models.CharField(max_length=250)
     releaseDate = models.DateTimeField()
-    trackList = ArrayField(models.CharField(max_length=150))
-    favTracks = ArrayField(models.CharField(max_length=150))
+    trackList = ArrayField(models.CharField(max_length=150), null=True)
+    favTracks = ArrayField(models.CharField(max_length=150), null=True)
     body = models.TextField()
     date = models.DateTimeField()
 

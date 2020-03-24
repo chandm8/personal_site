@@ -10,22 +10,18 @@
 <div id="content">
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
-            <h2><b>{{post.title}}</b></h2>
+            <h2><b>{{recipe.title}}</b></h2>
         </div>
     </div>
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
-            <h4><i>{{post.pronunciation}}</i></h4>
-            <h5>definition: {{post.definition}}</h5>
+            <h4><i>{{recipe.foodType}}</i></h4>
         </div>
     </div>
-    <div class="row justify-content-md-center">
+    <!-- <div class="row justify-content-md-center">
         <div class="col col-lg-6">
             <p>{{post.body|safe|linebreaks}}</p>
         </div>
-    </div>
+    </div> -->
 </div>
-
-{% load static %}
-<script src="{% static 'js/post.js' %}"></script>
 {% endblock %}

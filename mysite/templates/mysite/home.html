@@ -1,6 +1,6 @@
 {% extends "mysite/header.html" %}
 {% block content %}
-<div class="row" style="margin-top: 10px;margin-left: 10px;">
+<div class="row" style="padding-top: 10px;padding-left: 10px;">
     <div class="col-sm-11" id="name"> <!-- use auto to find natural width? -->
         <h4 onclick="darkTheme()" class="fade-in" id="name-btn">chandler manns</h4>
     </div>
@@ -16,7 +16,7 @@
 
 <div class="row justify-content-md-center" id="select-row">
     <div class="col-md-auto">
-        <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="food-btn">food</h3>
+        <a href="/food/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="food-btn">food</h3></a>
     </div>
     <div class="col-md-auto">
         <a href="/music/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="music-btn">music</h3></a>

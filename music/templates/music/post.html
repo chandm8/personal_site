@@ -1,8 +1,10 @@
 {% extends "mysite/header.html" %}
 
 {% block content %}
-<div class="row" style="margin-top: 10px;margin-left: 10px;">
-    <h4 onclick="darkTheme()" id="name-btn">chandler manns</h4>
+<div class="row">
+    <div class="col-sm-11" id="name" style="margin-top: 10px;margin-left: 10px;">
+        <h4 onclick="darkTheme()" id="name-btn">chandler manns</h4>
+    </div>
 </div>
 <div id="content">
     <div class="row justify-content-md-center">
@@ -14,7 +16,7 @@
                     <p>{{album.body|safe|linebreaks}}</p>
                     <p><b>Notable tracks:</b></p>
                         {% for song in album.favTracks %}
-                        <span>{{song}}{% if forloop.last == False %},{% endif %}</span>
+                        <span>{{song|safe}}{% if forloop.last == False %},{% endif %}</span>
                         {% endfor %}
                 </div>
                 <div class="col col-sm-4" style="padding-bottom: 40px;">
@@ -23,7 +25,7 @@
                         <h3 style="text-align: center;padding-top: 20px;"><b>Tracklist</b></h3>
                         <ol>
                             {% for song in album.trackList %}
-                            <li>{{song}}</li>
+                            <li>{{song|safe}}</li>
                             {% endfor %}
                         </ol>
                     </div>
