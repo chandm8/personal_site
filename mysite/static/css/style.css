@@ -54,7 +54,7 @@ h1 {
   }
 }
 
-.album-art {
+.album-art, .recipe-pic {
     width: 100%;
 }
 
