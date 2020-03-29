@@ -51,7 +51,7 @@ $(document).ready(function() {
         $("#food-btn").css('display', 'none').fadeIn(1000);
         $("#music-btn").css('display', 'none').fadeIn(1000);
         $("#words-btn").css('display', 'none').fadeIn(1000);
-        $("#business-btn").css('display', 'none').fadeIn(1000);
+        $("#self-btn").css('display', 'none').fadeIn(1000);
     }
 
     function breakWelcome() {

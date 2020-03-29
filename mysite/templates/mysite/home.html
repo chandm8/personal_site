@@ -1,13 +1,22 @@
 {% extends "mysite/header.html" %}
 {% block content %}
-<div class="row" style="padding-top: 10px;padding-left: 10px;">
-    <div class="col-sm-11" id="name"> <!-- use auto to find natural width? -->
-        <h4 onclick="darkTheme()" class="fade-in" id="name-btn">chandler manns</h4>
-    </div>
-	<div class="col-sm-1"> <!-- use auto to find natural width? -->
+
+<div class="row">
+    <div class="col-sm-1">
         <h4 id="name-blank-btn">‌&nbsp</h4>
     </div>
+    <div class="col-sm-8" id="name" style="margin-top: 10px;margin-right: 10px;right:0;position: absolute;">
+        <h4 onclick="darkTheme()" class="fade-in" id="name-btn" style="position: absolute;right:0;">chandler manns</h4>
+    </div>
 </div>
+<!-- <div class="row" style="padding-top: 10px;padding-left: 10px;">
+    <div class="col-sm-11" id="name">
+        <h4 onclick="darkTheme()" class="fade-in" id="name-btn">chandler manns</h4>
+    </div>
+	<div class="col-sm-1">
+        <h4 id="name-blank-btn">‌&nbsp</h4>
+    </div>
+</div> -->
 <div class="row" id="welcome">
     <div class="container text-center" id="title-container">
         <h1 id="blank">‌‌&nbsp</h1><h1 id="welcome-title"></h1><h1 id="welcome-title-cursor">|</h1>
@@ -25,7 +34,7 @@
         <a href="/words/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="words-btn">words</h3></a>
     </div>
     <div class="col-md-auto">
-        <h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="self-btn">self</h3>
+        <a href="/self/" class="anchor"><h3 onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)" class="fade-in btns" id="self-btn">self</h3></a>
     </div>
 </div>
 
