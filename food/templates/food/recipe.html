@@ -6,49 +6,60 @@
     <i id="arrow" class="fas fa-caret-right"></i>
 </div> -->
 
-<div id="header-row" class="row">
-    <div class="col-sm-2 menu-container" style="margin-top: 10px;margin-left: 10px;" onclick="hamMenuTrans(this)">
-        <div class="menu bar1"></div>
-        <div class="menu bar2"></div>
-        <div class="menu bar3"></div>
-    </div>
-    <div class="col-sm-8" id="name" style="margin-top: 10px;margin-right: 10px;right:0;position: absolute;">
-        <h4 onclick="darkTheme()" id="name-btn" style="position: absolute;right:0;"><b>chandler manns</b></h4>
+<div id="header-menu">
+    <div id="header-row" class="row">
+        <div class="col-2 menu-container" style="margin-top: 10px;margin-left: 10px;" onclick="hamMenuTrans(this)">
+            <div class="menu bar1"></div>
+            <div class="menu bar2"></div>
+            <div class="menu bar3"></div>
+        </div>
+        <div class="col-8" id="name" style="margin-top: 10px;margin-right: 10px;right:0;position: absolute;">
+            <h4 onclick="darkTheme()" id="name-btn" style="position: absolute;right:0;"><b>chandler manns</b></h4>
+        </div>
     </div>
 </div>
+
 <div id="mySidebar" class="sidebar">
-  <a href="#" class="anchor">food</a>
-  <a href="#" class="anchor">words</a>
-  <a href="#" class="anchor">music</a>
-  <a href="#" class="anchor">self</a>
+    <div class="menu-option">
+        <a href="/" class="anchor">home</a>
+    </div>
+    <div class="menu-option">
+        <a href="/food/" class="anchor">food</a>
+    </div>
+    <div class="menu-option">
+        <a href="/words/" class="anchor">words</a>
+    </div>
+    <div class="menu-option">
+        <a href="/music/" class="anchor">music</a>
+    </div>
+    <div class="menu-option">
+        <a href="/self/" class="anchor">self</a>
+    </div>
 </div>
 
 <div id="content">
     <div class="row justify-content-md-center">
-        <div class="col col-lg-6">
-            <div class="row justify-content-md-center">
-                <h2><b>{{recipe.title}}</b></h2>
-            </div>
-            <div class="row">
-                <div class="col col-lg-6">
-                    <img class="album-art" src="{{recipe.picture}}">
-                </div>
-                <div class="col col-lg-6">
-                    <h3><u>Ingredients</u></h3>
-                    <ul>
-                        {% for ingredient in recipe.ingredients %}
-                        <li>{{ingredient|safe}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <ol>
-                    {% for step in recipe.steps %}
-                    <li>{{step|safe}}</li>
-                    {% endfor %}
-                </ol>
-            </div>
+        <h2><b>{{recipe.title}}</b></h2>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-2 col-md-4 col-xs-8">
+            <img class="album-art" src="{{recipe.picture}}">
+        </div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <h3><u>Ingredients</u></h3>
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                <li>{{ingredient|safe}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6 col-md-12">
+            <ol>
+                {% for step in recipe.steps %}
+                <li>{{step|safe}}</li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
     <!-- <div class="row justify-content-md-center">

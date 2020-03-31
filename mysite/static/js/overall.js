@@ -1,31 +1,3 @@
-var isMobile;
-if (window.innerWidth < 960) {
-    isMobile = true;
-}
-else {
-    isMobile = false;
-}
-
-$(document).ready(function() {
-    $(window).resize(function() {
-        if ($(window).width() < 960) {
-            if (!isOpen) {
-                document.getElementById("mySidebar").style.width = "100%";
-                document.getElementById("mySidebar").style.height = "0";
-            }
-            isMobile = true;
-        }
-        else {
-            if (!isOpen) {
-                document.getElementById("mySidebar").style.height = "100%";
-                document.getElementById("mySidebar").style.width = "0";
-            }
-            isMobile = false;
-        }
-
-    });
-});
-
 var darkOn = false;
 
 function darkTheme() {
@@ -45,19 +17,25 @@ function darkTheme() {
             menu[i].style.backgroundColor = "black";
         }
 
-        document.getElementById("header-row").style.backgroundColor = "white";
-        document.getElementById("header-row").style.borderBottom = "2px solid black";
-        document.getElementById("mySidebar").style.backgroundColor = "white";
-        if (isOpen) {
-            if (isMobile) {
+        var menu_dis = document.getElementsByClassName("menu-option-disabled");
+
+        for(var i=0, len=menu_dis.length; i<len; i++)
+        {
+            menu_dis[i].style.color = "black";
+        }
+
+        if (document.getElementById("header-row") != null) {
+            document.getElementById("header-row").style.backgroundColor = "white";
+            document.getElementById("header-row").style.borderBottom = "2px solid black";
+        }
+        if (document.getElementById("mySidebar") != null) {
+
+            document.getElementById("mySidebar").style.backgroundColor = "white";
+            if (isOpen) {
                 document.getElementById("mySidebar").style.borderBottom = "2px solid black";
-            }
-            else {
-                document.getElementById("mySidebar").style.borderRight = "2px solid black";
             }
         }
 
-        darkOn = true;
         darkOn = false;
     }
     else {
@@ -76,15 +54,21 @@ function darkTheme() {
             menu[i].style.backgroundColor = "white";
         }
 
-        document.getElementById("header-row").style.backgroundColor = "black";
-        document.getElementById("header-row").style.borderBottom = "2px solid white";
-        document.getElementById("mySidebar").style.backgroundColor = "black";
-        if (isOpen) {
-            if (isMobile) {
+        var menu_dis = document.getElementsByClassName("menu-option-disabled");
+        for(var i=0, len=menu_dis.length; i<len; i++)
+        {
+            menu_dis[i].style.color = "white";
+        }
+
+        if (document.getElementById("header-row") != null) {
+
+            document.getElementById("header-row").style.backgroundColor = "black";
+            document.getElementById("header-row").style.borderBottom = "2px solid white";
+        }
+        if (document.getElementById("mySidebar") != null) {
+            document.getElementById("mySidebar").style.backgroundColor = "black";
+            if (isOpen) {
                 document.getElementById("mySidebar").style.borderBottom = "2px solid white";
-            }
-            else {
-                document.getElementById("mySidebar").style.borderRight = "2px solid white";
             }
         }
 
@@ -136,52 +120,27 @@ function navDecider() {
     else {
         openNav()
     }
-    console.log(isMobile);
 }
 
 function openNav() {
-
-    if (isMobile) {
-        document.getElementById("mySidebar").style.height = "400px";
-        // document.getElementById("mySidebar").style.width = "100%";
-        document.getElementById("content").style.marginTop = "400px";
-        if (darkOn) {
-            document.getElementById("mySidebar").style.borderBottom = "2px solid white";
-        }
-        else {
-            document.getElementById("mySidebar").style.borderRight = "2px solid black";
-        }
+    document.getElementById("mySidebar").style.height = "325px";
+    document.getElementById("mySidebar").style.paddingTop = "55px";
+    document.getElementById("content").style.paddingTop = "350px";
+    if (darkOn) {
+        document.getElementById("mySidebar").style.borderBottom = "2px solid white";
     }
     else {
-        // document.getElementById("mySidebar").style.height = "100%";
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("content").style.marginLeft = "250px";
-        if (darkOn) {
-            document.getElementById("mySidebar").style.borderRight = "2px solid white";
-        }
-        else {
-            document.getElementById("mySidebar").style.borderRight = "2px solid black";
-        }
+        document.getElementById("mySidebar").style.borderBottom = "2px solid black";
     }
-
     isOpen = true;
 }
 
 function closeNav() {
-    if (isMobile) {
-        document.getElementById("mySidebar").style.height = "0";
-        document.getElementById("content").style.marginTop= "0";
-        setTimeout(function() {
-            document.getElementById("mySidebar").style.borderBottom = "none";
-        }, 400);
-    }
-    else {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("content").style.marginLeft= "0";
-        setTimeout(function() {
-            document.getElementById("mySidebar").style.borderRight = "none";
-        }, 400);
-    }
-
+    document.getElementById("mySidebar").style.height = "0";
+    document.getElementById("mySidebar").style.paddingTop = "0";
+    document.getElementById("content").style.paddingTop = "150px";
+    setTimeout(function() {
+        document.getElementById("mySidebar").style.borderBottom = "none";
+    }, 400);
     isOpen = false;
 }
