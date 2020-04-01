@@ -52,8 +52,11 @@ h1 {
     .front-title {
         font-size: 25px;
     }
+    #welcome-title {
+        font-weight: bold;
+    }
     .front-menu-option {
-        font-size: 20px;
+        font-size: 25px;
     }
 }
 

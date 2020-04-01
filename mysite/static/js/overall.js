@@ -106,6 +106,52 @@ function fixTxt(x) {
     x.innerHTML = x.innerHTML.toLowerCase();
 }
 
+var first_crazy = true;
+var capInterval_crazy;
+var ogText;
+var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+function crazyTxt(x) {
+    var randIdx = 0;
+    capInterval_crazy = setInterval(function() {
+        if (first_crazy) {
+            ogText = x.innerHTML;
+            randIdx = Math.floor(Math.random() * x.innerHTML.length);
+            while (x.innerHTML.charAt(randIdx) == ' ') {
+                randIdx = Math.floor(Math.random() * x.innerHTML.length);
+            }
+            randChar = Math.floor(Math.random() * alphabet.length);
+            while (alphabet.charAt(randChar) == x.innerHTML.charAt(randIdx)) {
+                randChar = Math.floor(Math.random() * alphabet.length);
+            }
+            x.innerHTML = x.innerHTML.substring(0, randIdx) + alphabet.charAt(randChar) + x.innerHTML.substring(randIdx + 1, x.innerHTML.length);
+            first_crazy = false
+        }
+        else {
+            var randTmp = Math.floor(Math.random() * x.innerHTML.length);
+            while (randTmp == randIdx && x.innerHTML.charAt(randTmp) == ' ') {
+                randTmp = Math.floor(Math.random() * x.innerHTML.length);
+            }
+            randIdx = randTmp;
+            randChar = Math.floor(Math.random() * alphabet.length);
+            while (alphabet.charAt(randChar) == x.innerHTML.charAt(randIdx)) {
+                randChar = Math.floor(Math.random() * alphabet.length);
+            }
+
+            x.innerHTML = x.innerHTML.substring(0, randIdx) + alphabet.charAt(randChar) + x.innerHTML.substring(randIdx + 1, x.innerHTML.length);
+        }
+
+    }, 25);
+}
+
+function fixTxt_crazy(x) {
+    if (!first_crazy) {
+        clearInterval(capInterval_crazy);
+        var first_crazy = true; //reset in onmouseout
+        x.innerHTML = ogText;
+    }
+}
+
 function hamMenuTrans(x) {
     x.classList.toggle("change");
     navDecider();
