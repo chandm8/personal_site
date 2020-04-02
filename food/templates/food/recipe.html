@@ -39,25 +39,29 @@
 
 <div id="content">
     <div class="row justify-content-md-center">
-        <h2><b>{{recipe.title}}</b></h2>
+        <h2><b class="glitch-actv">{{recipe.title}}</b></h2>
     </div>
     <div class="row justify-content-md-center">
         <div class="col-lg-2 col-md-4 col-xs-8">
             <img class="album-art" src="{{recipe.picture}}">
         </div>
         <div class="col-lg-4 col-md-8 col-sm-12">
-            <h3><u>Ingredients</u></h3>
+            <h4 class="glitch-actv">Ingredients</h4>
             <ul>
                 {% for ingredient in recipe.ingredients %}
-                <li>{{ingredient|safe}}</li>
+                <li class="glitch-actv">{{ingredient|safe}}</li>
                 {% endfor %}
             </ul>
         </div>
+    </div>
+    <hr width="50%" id="desktop-brk">
+    <hr id="mobile-brk">
     <div class="row justify-content-md-center">
         <div class="col col-lg-6 col-md-12">
+            <h4 class="glitch-actv">Steps</h4>
             <ol>
                 {% for step in recipe.steps %}
-                <li>{{step|safe}}</li>
+                <li class="glitch-actv">{{step|safe}}</li>
                 {% endfor %}
             </ol>
         </div>

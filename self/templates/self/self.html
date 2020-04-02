@@ -31,9 +31,12 @@
 </div>
 
 <div id="content">
-    <p>hello world</p>
+    <div class="row justify-content-md-center">
+        <div class="col col-sm-6">
+            <h2 class="menu-title" onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)">about</h2>
+            <p class="glitch-actv">put bio here.</p>
+        </div>
+    </div>
 </div>
 
-{% load static %}
-<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

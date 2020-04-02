@@ -228,3 +228,18 @@ h1 {
 .no-transition {
     transition: none !important;
 }
+
+#mobile-brk {
+    display: none;
+}
+#desktop-brk {
+    display: block;
+}
+@media only screen and (max-width: 992px) {
+    #mobile-brk {
+        display: block;
+    }
+    #desktop-brk {
+        display: none;
+    }
+}

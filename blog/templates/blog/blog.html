@@ -40,7 +40,7 @@
         <div class="col col-lg-6">
             {% for post in object_list %}
             <div class="post-option">
-                <a href="/words/{{post.id}}" class="anchor"><span class="post-hover">></span>{{post.title}}</a>
+                <a href="/words/{{post.id}}" class="anchor"><span class="post-hover">></span><span class="glitch-actv">{{post.title}}</span></a>
             </div>
             {% endfor %}
         </div>

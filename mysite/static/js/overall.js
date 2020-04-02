@@ -152,6 +152,38 @@ function fixTxt_crazy(x) {
     }
 }
 
+function glitchText() {
+    console.log("here");
+    if (document.getElementsByClassName("glitch-actv").length != 0) {
+        console.log("here2");
+        setInterval(function() {
+            console.log("here3");
+            var text = document.getElementsByClassName("glitch-actv");
+            var randIdx = Math.floor(Math.random() * text.length);
+            var charIdx = Math.floor(Math.random() * text[randIdx].innerHTML.length);
+            while (text[randIdx].innerHTML.charAt(charIdx) == ' ') {
+                charIdx = Math.floor(Math.random() * text[randIdx].innerHTML.length);
+            }
+            var origText = text[randIdx].innerHTML;
+            var randBin = Math.random() >= 0.5;
+            if (randBin) {
+                text[randIdx].innerHTML = text[randIdx].innerHTML.substring(0, charIdx) + "1" + text[randIdx].innerHTML.substring(charIdx + 1, text[randIdx].innerHTML.length);
+            }
+            else {
+                text[randIdx].innerHTML = text[randIdx].innerHTML.substring(0, charIdx) + "0" + text[randIdx].innerHTML.substring(charIdx + 1, text[randIdx].innerHTML.length);
+            }
+            console.log(charIdx);
+            setTimeout(function() {
+                text[randIdx].innerHTML = origText;
+            }, 150);
+        }, 4000);
+    }
+}
+
+window.onload = function start() {
+    glitchText();
+}
+
 function hamMenuTrans(x) {
     x.classList.toggle("change");
     navDecider();
