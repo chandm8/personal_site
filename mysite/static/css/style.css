@@ -243,3 +243,52 @@ h1 {
         display: none;
     }
 }
+
+.social {
+    transition: 0.4s;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    color: purple;
+  }
+  10% {
+    color: red;
+  }
+  20% {
+    color: CadetBlue;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: coral;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: DeepPink;
+  }
+  80% {
+    color: DodgerBlue;
+  }
+  90% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+.social:hover{
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite;
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    /* Standar Syntax */
+    animation: rainbow 5s infinite;
+}

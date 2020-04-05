@@ -17,6 +17,12 @@ function darkTheme() {
             menu[i].style.backgroundColor = "black";
         }
 
+        var soc_icons = document.getElementsByClassName("social");
+        for(var i=0, len=soc_icons.length; i<len; i++)
+        {
+            soc_icons[i].style.color = "black";
+        }
+
         var menu_dis = document.getElementsByClassName("menu-option-disabled");
 
         for(var i=0, len=menu_dis.length; i<len; i++)
@@ -52,6 +58,12 @@ function darkTheme() {
         for(var i=0, len=menu.length; i<len; i++)
         {
             menu[i].style.backgroundColor = "white";
+        }
+
+        var soc_icons = document.getElementsByClassName("social");
+        for(var i=0, len=soc_icons.length; i<len; i++)
+        {
+            soc_icons[i].style.color = "white";
         }
 
         var menu_dis = document.getElementsByClassName("menu-option-disabled");
@@ -153,11 +165,8 @@ function fixTxt_crazy(x) {
 }
 
 function glitchText() {
-    console.log("here");
     if (document.getElementsByClassName("glitch-actv").length != 0) {
-        console.log("here2");
         setInterval(function() {
-            console.log("here3");
             var text = document.getElementsByClassName("glitch-actv");
             var randIdx = Math.floor(Math.random() * text.length);
             var charIdx = Math.floor(Math.random() * text[randIdx].innerHTML.length);
@@ -172,7 +181,6 @@ function glitchText() {
             else {
                 text[randIdx].innerHTML = text[randIdx].innerHTML.substring(0, charIdx) + "0" + text[randIdx].innerHTML.substring(charIdx + 1, text[randIdx].innerHTML.length);
             }
-            console.log(charIdx);
             setTimeout(function() {
                 text[randIdx].innerHTML = origText;
             }, 150);
@@ -183,6 +191,92 @@ function glitchText() {
 window.onload = function start() {
     glitchText();
 }
+
+$(document).ready(function() {
+
+    var skills = ["java.", "python.", "git.", "C language.", "C++.", "html/css.", "javascript.", "django.", "jquery.", "android.", "agile.", "SQL.", "bootstrap.", "crowdsourcing.", "human-computer interaction.", "front-end development."];
+    var tempSkills = ["java.", "python.", "git.", "C language.", "C++.", "html/css.", "javascript.", "django.", "jquery.", "android.", "agile.", "SQL.", "bootstrap.", "crowdsourcing.", "human-computer interaction.", "front-end development."];
+    var sillySkills = ["sleeping.", "eating.", "mariokart."];
+    var tempSillySkills = ["sleeping.", "eating.", "mariokart."];
+    var idx = 0;
+    var skillSelected = false;
+    var silly = false
+    var skill;
+    var skillsTyped = 0;
+
+    function typeWriterSkills() {
+        var theInterval = setInterval(function() {
+
+            if (!skillSelected) {
+
+                var randSilly = Math.random() >= 0.9;
+                if (!silly && skillsTyped > 3 && randSilly) {
+                    silly = true;
+                }
+                else if (silly) {
+                    silly = false
+                }
+                console.log(silly);
+
+                var skillIdx;
+                if (silly) {
+                    skillIdx = Math.floor(Math.random() * tempSillySkills.length);
+                    while (tempSillySkills[skillIdx] == skill) {
+                        skillIdx = Math.floor(Math.random() * tempSillySkills.length);
+                    }
+                    skill = tempSillySkills[skillIdx];
+                    tempSillySkills.splice(skillIdx, 1);
+                }
+                else {
+                    skillIdx = Math.floor(Math.random() * tempSkills.length);
+                    while (tempSkills[skillIdx] == skill) {
+                        skillIdx = Math.floor(Math.random() * tempSkills.length);
+                    }
+                    skill = tempSkills[skillIdx];
+                    tempSkills.splice(skillIdx, 1);
+                }
+
+                if (tempSkills.length == 0) {
+                    for (var i = 0; i < skills.length; i++) {
+                        tempSkills.push(skills[i]);
+                    }
+                }
+                if (tempSillySkills.length == 0) {
+                    for (var i = 0; i < sillySkills.length; i++) {
+                        tempSillySkills.push(sillySkills[i]);
+                    }
+                }
+                skillSelected = true;
+            }
+            $("#skill").append(skill.charAt(idx));
+            idx++;
+            if (idx == skill.length) {
+                skillSelected = false;
+                skillsTyped++;
+                setTimeout(typeDeleterSkills, 1000);
+                clearInterval(theInterval); // this stops the loop
+            }
+
+            // if (i == txt.length && done) {
+            //     clearInterval(theInterval); // this stops the loop
+            // }
+        }, 50);
+    }
+
+    function typeDeleterSkills() {
+        var theInterval = setInterval(function() {
+            $('#skill').html($('#skill').html().substring(0,$('#skill').html().length - 1));
+            idx--;
+            if (idx == 0) {
+                setTimeout(typeWriterSkills, 1000);
+                clearInterval(theInterval);
+            }
+        }, 50);
+    }
+    if (document.getElementById("skill") != null) {
+        setTimeout(typeWriterSkills, 1000);
+    }
+});
 
 function hamMenuTrans(x) {
     x.classList.toggle("change");
