@@ -23,7 +23,7 @@
     </div>
     <span class="menu-option-disabled">words</span>
     <div class="menu-option">
-        <a href="/music/" class="anchor">music</a>
+        <a href="/music/" class="anchor">listen</a>
     </div>
     <div class="menu-option">
         <a href="/self/" class="anchor">self</a>
@@ -34,15 +34,20 @@
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
             <h2 class="menu-title" onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)">words</h2>
+            <!-- <h5 class="glitch-actv">more than a dictionary</h5> -->
         </div>
     </div>
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
+            {% if object_list %}
             {% for post in object_list %}
             <div class="post-option">
                 <a href="/words/{{post.id}}" class="anchor"><span class="post-hover">></span><span class="glitch-actv">{{post.title}}</span></a>
             </div>
             {% endfor %}
+            {% else %}
+            <p class="glitch-actv">No posts yet!</p>
+            {% endif %}
         </div>
     </div>
 </div>

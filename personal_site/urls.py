@@ -24,3 +24,5 @@ urlpatterns = [
     path('food/', include('food.urls')),
     path('self/', include('self.urls')),
 ]
+
+handler404 = 'mysite.views.error_404_view'
