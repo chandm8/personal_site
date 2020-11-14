@@ -295,9 +295,9 @@ function navDecider() {
 }
 
 function openNav() {
-    document.getElementById("mySidebar").style.height = "325px";
+    document.getElementById("mySidebar").style.height = "275px";
     document.getElementById("mySidebar").style.paddingTop = "55px";
-    document.getElementById("content").style.paddingTop = "350px";
+    document.getElementById("content").style.paddingTop = "300px";
     if (darkOn) {
         document.getElementById("mySidebar").style.borderBottom = "2px solid white";
     }

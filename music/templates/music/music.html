@@ -21,9 +21,9 @@
     <div class="menu-option">
         <a href="/food/" class="anchor">food</a>
     </div>
-    <div class="menu-option">
+    <!-- <div class="menu-option">
         <a href="/words/" class="anchor">words</a>
-    </div>
+    </div> -->
     <span class="menu-option-disabled">listen</span>
     <div class="menu-option">
         <a href="/self/" class="anchor">self</a>
@@ -34,9 +34,15 @@
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
             <h2 class="menu-title" onmouseover="funnyTxt(this)" onmouseout="fixTxt(this)">listen</h2>
-            <h5 class="glitch-actv">albums worth listening to</h5>
         </div>
     </div>
+    <hr width="50%" id="desktop-brk">
+    <hr id="mobile-brk">
+    <!-- <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <h2 class="album_elem"><i class="glitch-actv">good albums</i></h2>
+        </div>
+    </div> -->
     <div class="row justify-content-md-center">
         <div class="col col-lg-6">
             {% load custom_tags %}
@@ -59,6 +65,11 @@
             {% endfor %}
         </div>
     </div>
+    <!-- <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+            <h2 class="album_elem"><i class="glitch-actv">good songs</i></h2>
+        </div>
+    </div> -->
 </div>
 
 {% endblock %}

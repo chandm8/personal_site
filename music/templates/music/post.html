@@ -21,9 +21,9 @@
     <div class="menu-option">
         <a href="/food/" class="anchor">food</a>
     </div>
-    <div class="menu-option">
+    <!-- <div class="menu-option">
         <a href="/words/" class="anchor">words</a>
-    </div>
+    </div> -->
     <div class="menu-option">
         <a href="/music/" class="anchor">listen</a>
     </div>
@@ -35,8 +35,8 @@
 <div id="content">
     <div class="row justify-content-md-center">
         <div class="col-lg-5 col-md-8 col-xs-12" style="padding-bottom: 40px;">
-            <h2 class="glitch-actv" style="text-align: center;"><b>{{album.title}}</b></h2>
-            <h4 class="glitch-actv" style="text-align: center;"><i>{{album.artist}}</i></h4>
+            <h2 style="text-align: center;"><b class="glitch-actv">{{album.title}}</b></h2>
+            <h4 style="text-align: center;"><i class="glitch-actv">{{album.artist}}</i></h4>
             <p class="glitch-actv">{{album.body|safe|linebreaks}}</p>
             <p><b class="glitch-actv">Notable tracks:</b></p>
                 {% for song in album.favTracks %}
